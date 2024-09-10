@@ -2,10 +2,18 @@
 
 # Lab 1
 # Problem 1
-# Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
+my_list = [1,5,'apple',20.5]
+print(my_list)
+print('apple')
+my_list.append(10)
+print(my_list)
+my_list.remove(20.5)
+print(my_list)
+my_list.reverse()
+print(my_list)
 
 # Problem 2
-# Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
+
 
 # -----------------------------------------------------------------------------
 
@@ -38,6 +46,9 @@ def count_vowels(s: str) -> int:
 
 
 # Unit Tests for count_vowels
+def count_vowels(s):
+    vowels = "aeiouAEIOU"
+    return sum(1 for char in s if char in vowels)
 def test_count_vowels():
     test(count_vowels("hello") == 2)
     test(count_vowels("why") == 0)
@@ -64,7 +75,27 @@ def merge_lists(list1: list, list2: list) -> list:
     - list: A new sorted list containing all elements from list1 and list2
     """
     # TODO: Implement this function
-    pass
+    merged = []
+    i, j = 0, 0
+
+    while i < len(list1) and j < len(list2):
+        if list1[i] < list2[j]:
+            merged.append(list1[i])
+            i += 1
+        else:
+            merged.append(list2[j])
+            j += 1
+
+    while i < len(list1):
+        merged.append(list1[i])
+        i += 1
+
+    while j < len(list2):
+        merged.append(list2[j])
+        j += 1
+
+    return merged
+
 
 
 # Unit Tests for merge_lists
@@ -81,8 +112,7 @@ def test_merge_lists():
     test(merge_lists([1, 2, 3], [4, 5, 6]) == [1, 2, 3, 4, 5, 6])
     test(merge_lists([1, 3, 5, 7, 9], [2, 4, 6, 8, 10]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     test(merge_lists([1, 1, 2, 3], [1, 2, 2, 3]) == [1, 1, 1, 2, 2, 2, 3, 3])
-
-
+    print(merged)
 # Function 3: word_lengths
 def word_lengths(words: list) -> list:
     """
@@ -95,7 +125,7 @@ def word_lengths(words: list) -> list:
     - list: A list containing the lengths of the words
     """
     # TODO: Implement this function
-    pass
+    return [len(word) for word in words]
 
 
 # Unit Tests for word_lengths
@@ -122,7 +152,7 @@ def reverse_string(s: str) -> str:
     - str: The reversed string
     """
     # TODO: Implement this function
-    pass
+    return s[::-1]
 
 
 # Unit Tests for reverse_string
@@ -151,7 +181,9 @@ def intersection(list1: list, list2: list) -> list:
     - list: The intersection of the two lists
     """
     # TODO: Implement this function
-    pass
+    set1 = set(list1)
+    set2 = set(list2)
+    return list(set1 & set2)
 
 
 # Unit Tests for intersection
@@ -183,3 +215,4 @@ def test_suite():
 
 
 test_suite()
+#forgot to commit, but ended up copying my work when it was lost, so I just copied it here.
