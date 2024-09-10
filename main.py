@@ -13,7 +13,19 @@ my_list.reverse()
 print(my_list)
 
 # Problem 2
+person = {'name':'john',
+          'age':30,
+          'job':'teacher'}
 
+print("job:", person['job'])
+person['city'] = 'Paris'
+print(person)
+
+del person["age"]
+print(person)
+
+for key, value in person.items():
+    print(f"{key}: {value}")
 
 # -----------------------------------------------------------------------------
 
